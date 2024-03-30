@@ -8,3 +8,10 @@ spring:
         git:
           uri: https://github.com/heretic604/config
       label: main
+
+#spring:
+#  profiles:
+#    include: native
+#  application.name: config
+#  cloud.config.server:
+#    native.search-locations: classpath:client-config/, classpath:client-config/{application}

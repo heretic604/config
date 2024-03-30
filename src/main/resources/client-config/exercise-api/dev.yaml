@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 9090
 
 spring:
   datasource:
@@ -7,3 +7,20 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
+
+#spring:
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+      ddl-auto: validate
+    show-sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+logging:
+  level:
+    ROOT: INFO
