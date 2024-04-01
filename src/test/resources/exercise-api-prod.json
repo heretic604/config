@@ -1,0 +1,19 @@
+{
+  "name": "exercise-api",
+  "profiles": [
+    "prod"
+  ],
+  "label": null,
+  "version": null,
+  "state": null,
+  "propertySources": [
+    {
+      "name": "classpath:/config/exercise-api/exercise-api-prod.yaml",
+      "source": {
+        "server.port": 9090,
+        "spring.datasource.url": "jdbc:postgresql://localhost:5432/coach",
+        "spring.datasource.driver-class-name": "org.postgresql.Driver"
+      }
+    }
+  ]
+}
