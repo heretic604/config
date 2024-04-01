@@ -1,7 +1,7 @@
 {
   "name": "common",
   "profiles": [
-    "prod"
+    "default"
   ],
   "label": null,
   "version": null,

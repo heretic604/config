@@ -33,6 +33,7 @@ class ConfigApplicationTests {
     private final String common = "common";
     private final String profileDev = "dev";
     private final String profileProd = "prod";
+    private final String profileDefault = "default";
     private final int expectedCode = 200;
 
     @Test
@@ -70,25 +71,11 @@ class ConfigApplicationTests {
     }
 
     @Test
-    public void getCommonDevConfigTest() {
-        var expectedContent = getExpectedContentFromJson("common-dev.json");
+    public void getCommonConfigTest() {
+        var expectedContent = getExpectedContentFromJson("common-default.json");
 
-        var response = restTemplate.getForEntity(host + port + "/{common}/{profileDev}",
-                String.class, common, profileDev);
-
-        var actualCode = response.getStatusCode().value();
-        var actualContent = response.getBody();
-
-        assertEquals(expectedCode, actualCode);
-        assertEquals(expectedContent, actualContent);
-    }
-
-    @Test
-    public void getCommonProdConfigTest() {
-        var expectedContent = getExpectedContentFromJson("common-prod.json");
-
-        var response = restTemplate.getForEntity(host + port + "/{common}/{profileProd}",
-                String.class, common, profileProd);
+        var response = restTemplate.getForEntity(host + port + "/{common}/{profileDefault}",
+                String.class, common, profileDefault);
 
         var actualCode = response.getStatusCode().value();
         var actualContent = response.getBody();
