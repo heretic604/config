@@ -1,4 +1,7 @@
 spring:
+  datasource:
+    username: postgres
+    password: postgres
   jpa:
     hibernate:
       naming:

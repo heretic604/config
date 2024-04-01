@@ -33,3 +33,11 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootJar {
+	archiveFileName = 'config.jar'
+}
+
+jar {
+	enabled = false
+}
