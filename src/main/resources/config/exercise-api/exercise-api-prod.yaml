@@ -3,5 +3,19 @@ server:
 
 spring:
   datasource:
+    username: postgres
+    password: postgres
     url: jdbc:postgresql://localhost:5432/coach
     driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+      ddl-auto: validate
+    show-sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
