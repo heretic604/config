@@ -19,3 +19,11 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
+
+eureka:
+  instance:
+    preferIpAddress: true
+
+logging:
+  level:
+    ROOT: INFO
